@@ -5,7 +5,6 @@
 
 enum months
 {
-    Esc,
     Jan = 1,
     Feb,
     Mar,
@@ -29,8 +28,8 @@ int main(int argc, char** argv)
     {
         std::cout << "Введите номер месяца : ";
         std::cin >> m;
-        //months month = static_cast<months>(1);
-        switch (m)
+        months month = static_cast<months>(m);
+        switch (month)
         {
         case Jan:
             std::cout << "Январь" << "\n";
@@ -68,7 +67,7 @@ int main(int argc, char** argv)
         case Dec:
             std::cout << "Декабрь" << "\n";
             break;
-        case Esc:
+        case 0:
             std::cout << "До свидания" << std::endl;
             break;
         default:
@@ -76,6 +75,7 @@ int main(int argc, char** argv)
             break;
         }
     }
+    
      return 0;   
 }
 
